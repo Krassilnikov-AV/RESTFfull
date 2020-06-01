@@ -42,10 +42,10 @@ public class RESTFfullServlet extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             if (sdirect) {
 // вывод 
-                result = rst2.getContent(tdirect);                            
+                result = rst2.altGetContent(tdirect);                            
             }
             if (sfile) {
-                result = rst2.altFindFile(tdirect, tfile);              
+                result = rst2.altFindFile(tfile, tdirect);
             }
             request.setAttribute("result", "\n" + result.toString());
             request.getRequestDispatcher("index.jsp").forward(request, response);
