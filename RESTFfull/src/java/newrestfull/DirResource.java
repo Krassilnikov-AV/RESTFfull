@@ -91,7 +91,7 @@ public class DirResource implements IDirectory {
 //        return sb.toString();
 
         StringBuilder sb = new StringBuilder();
-        sb.append("<h1>Content of folder '" + dirName + "':</h1>");
+        sb.append("<h1>Content of folder/Содержимое папки '" + dirName + "':</h1>");
 // получение имени директории     
         File folder = new File(dirName);
 //Возвращение массива абстрактных путей, 
