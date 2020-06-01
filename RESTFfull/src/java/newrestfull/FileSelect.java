@@ -7,7 +7,7 @@ package newrestfull;
 
 import java.io.File;
 import java.io.FilenameFilter;
-
+//реализован для фильтрации имен файлов в определенной папке
 public class FileSelect implements FilenameFilter {
 
     private String fragment;
