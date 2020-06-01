@@ -63,7 +63,8 @@ public class DirResource implements IDirectory {
 
     private String getFolderContent(String dirName) {
         StringBuilder sb;
-        sb = new StringBuilder("<h2>getContent() called, dirName = " + dirName + "</h2><ol><big> ");
+        //sb = new StringBuilder("<h2>getContent() called, dirName = " + dirName + "</h2><ol><big> ");
+         sb = new StringBuilder("<h2>вызов, директории/папки = " + dirName + "</h2><ol><big> ");
         File folder = new File(dirName);
         if (folder.listFiles() == null) {
             return "Folder '" + dirName + "' does not exist !";
@@ -95,8 +96,9 @@ public class DirResource implements IDirectory {
 // получение имени директории     
         File folder = new File(dirName);
 //Возвращение массива абстрактных путей, 
-//обозначающих файлы в каталоге, обозначенном этим абстрактным путем.
+//содержание папок и файлов в каталоге, обозначенном этим абстрактным путем.
         File[] content = folder.listFiles(new FileSelect(fragment));
+// если содержание пустое, то выводит сообщение, что не существует папка      
         if (content == null) {
             sb.append("<h2> Folder '" + dirName + "' does not exist</h2>");
         } else {
