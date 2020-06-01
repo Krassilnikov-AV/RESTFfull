@@ -9,7 +9,7 @@ import java.io.File;
 import java.io.FilenameFilter;
 //реализован для фильтрации имен файлов в определенной папке
 public class FileSelect implements FilenameFilter {
-
+// фрагмент, включенный файл в папке
     private String fragment;
     private boolean regexp;
 
