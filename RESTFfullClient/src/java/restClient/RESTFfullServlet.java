@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
 /**
  *
  */
@@ -30,29 +31,22 @@ public class RESTFfullServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
 
         String tdirect = request.getParameter("direct");
-        String tfolder = request.getParameter("folder");
+        String tfile = request.getParameter("file");
 
-        boolean direct = request.getParameter("direct") != null;
-        boolean sfolder = request.getParameter("sfolder") != null;
+        boolean sdirect = request.getParameter("direct") != null;
+        boolean sfile = request.getParameter("sfile") != null;
 
         RESTFfullClient rst2 = new RESTFfullClient();
 
         String result = null;
-        String resultdir;
+//  String resultdir;
         try (PrintWriter out = response.getWriter()) {
-            if (direct) {
-                String resCon = rst2.altGetContent(tdirect);
-                result = resCon;              
+            if (sdirect) {
+// вывод 
+                result = rst2.altGetContent(tdirect);                            
             }
-            if (sfolder) {
-                File f = new File(result);
-                  resultdir = result;
-// boolean isDirectory() - Проверяет, является ли файл, обозначенный этим абстрактным путем, каталогом.
-                if(f.isDirectory()) {
-                  result = rst2.findFile(resultdir, tfolder);
-                }
-                result = rst2.altFindFile(resultdir, tfolder);
-                //               rst2.close();
+            if (sfile) {
+                result = rst2.altFindFile(tfile, tdirect);
             }
             request.setAttribute("result", "\n" + result.toString());
             request.getRequestDispatcher("index.jsp").forward(request, response);
