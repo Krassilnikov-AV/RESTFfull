@@ -40,8 +40,8 @@
                     <input type="text" name="direct" size="15" /><Br>
                     <input type="submit" name="direct" value="Директория"  /><Br>
                     Папка/Файл:&nbsp;
-                    <input type="text" name="folder" size="15" /><Br>
-                    <td><input type="submit" name="sfolder" value="Папка/Файл"  /> </td>
+                    <input type="text" name="file" size="15" /><Br>
+                    <td><input type="submit" name="sfile" value="Папка/Файл"  /> </td>
                     </tr>
                 </table>
             </form>
